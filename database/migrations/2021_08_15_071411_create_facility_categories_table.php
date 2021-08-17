@@ -15,9 +15,9 @@ class CreateFacilityCategoriesTable extends Migration
     {
         Schema::create('facility_categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('facility_id');
+            $table->unsignedBigInteger('facility_id');
             $table->foreign('facility_id')->references('id')->on('facilities');
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });

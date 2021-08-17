@@ -17,9 +17,9 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->integer('star');
             $table->text('text');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('facility_id');
+            $table->unsignedBigInteger('facility_id');
             $table->foreign('facility_id')->references('id')->on('facilities');
             $table->timestamps();
         });
