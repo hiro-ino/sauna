@@ -15,14 +15,15 @@ class CreateFacilitiesTable extends Migration
     {
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
-            $table->string('picture');
+            $table->string('picture')->nullable();
+            $table->string('name');
             $table->unsignedBigInteger('prefecture_id');
             // $table->foreign('prefecture_id')->references('id')->on('prefectures');
             $table->string('address');
             $table->string('tel');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('day_off');
-            $table->string('business_hour');
+            $table->string('business_hour')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
