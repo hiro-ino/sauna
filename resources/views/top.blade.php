@@ -30,7 +30,7 @@
                 @foreach ($facilities as $facility)
                 <div class="facility">
                     <div class="facility_image">
-                        <img src="./image/トップページ　背景　ヴィヒタ.jpeg" alt="写真" class="picture">
+                        <img src="./image/noimage.png" alt="写真" class="picture">
                     </div>
                     <div class="facility_detail">
                         <div class="facility_detail_top">
@@ -43,13 +43,21 @@
                                 <p class="detail">TEL　{{$facility->tel}}</p>
                             </div>
                             <div class="facility_detail_bottom_right">
-                                <ul class="category">
-                                    {{-- 時間があれば関数を使って、DBでカテゴリーのidのあるものだけ表示させる --}}
-                                    @if 
+                                <ul class="category">                                   
+                                    @foreach($facility->facilityCategories as $value)
+                                    @if($value->category_id == 1)
                                     <li class="circle on">温</li>
+                                    @endif
+                                    @if($value->category_id == 2)
                                     <li class="circle mizu">水</li>
+                                    @endif
+                                    @if($value->category_id == 3)                                
                                     <li class="circle gai">外</li>
+                                    @endif
+                                    @if($value->category_id == 4)
                                     <li class="circle in">飲</li>
+                                    @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
