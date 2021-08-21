@@ -2,7 +2,7 @@
 
 @section('top')
 <main>
-    <img src="./image/トップページ　背景.jpeg" alt="写真" style="width: 100vw;">
+    <img src="./image/トップページ　背景.jpeg" alt="写真" style="width: 100vw; height: 600px;">
     <div class="background">
         <div class="padding">
             <div class="search">
