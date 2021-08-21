@@ -2,14 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./top.css">
-  <title>Document</title>
+  <title>Sauna.com</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sunt alias libero cum vitae quasi tenetur perferendis odio enim, quam corrupti eius ipsum quis explicabo, veritatis consectetur nesciunt cumque! Consectetur!</p>
-  @yield('top')
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sunt alias libero cum vitae quasi tenetur perferendis odio enim, quam corrupti eius ipsum quis explicabo, veritatis consectetur nesciunt cumque! Consectetur!</p>
+   <header>
+    <div class="page-header">
+     <nav class="title">
+       <h1 href="index.php" class="navbar-left">Sauna.com</h1>
+       <h5 class="title">サウナドットコム</h5>
+     </nav>
+    </div>
+
+     <div class="hamburger-menu">
+       <input type="checkbox" id="menu-btn-check">
+       <label for="menu-btn-check" class="menu-btn"><span></span></label>
+       <div class="menu-content">
+           <ul>
+               <li>
+                  <a href="#">マイページ</a>
+               </li>
+                <li>
+                  <a href="#">施設一覧</a>
+              </li>
+              <li>
+                  <a href="#">新規ユーザー登録</a>
+              </li>
+              <li>
+                  <a href="#">ログイン</a>
+              </li>
+              <li>
+                  <a href="#">施設詳細</a>
+              </li>
+              <li>
+                <form method="get" action="#" class="search_container">
+                  <input type="text" size="25" placeholder="　キーワード検索">
+                  <input type="submit" value="検索">
+                </form>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </header>
+
+@yield('top')
+
+<footer>
+  <div class="page-footer">
+    <h2 class="site-footer">Sauna.com</h2>
+    <h5 class="global-footer">サウナドットコム</h5>
+    <i class="fab fa-instagram fa-2x"></i>
+    <i class="fab fa-twitter-square fa-2x"></i>
+    <i class="fab fa-facebook-square fa-2x"></i>
+  </div>
+</footer>
 </body>
 </html>

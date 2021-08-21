@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('top');
-// });
 
 Route::get('/', 'FacilityController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
