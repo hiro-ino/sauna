@@ -13,5 +13,6 @@ class FacilityController extends Controller
         $facilities = Facility::all();
 
         return view('top',['facilities' => $facilities ]);
+
         }
 }
