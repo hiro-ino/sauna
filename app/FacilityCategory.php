@@ -8,6 +8,6 @@ class FacilityCategory extends Model
 {
     function facility()
     {
-        return $this->belongsTp('App\Facility');
+        return $this->belongsTo('App\Facility');
     }
 }

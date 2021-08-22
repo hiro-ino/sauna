@@ -1,6 +1,6 @@
 @extends('layouts.frame')
-
-@section('top')
+<link rel="stylesheet" href="./top.css">
+@section('content')
 <main>
     <img src="./image/トップページ　背景.jpeg" alt="写真" style="width: 100vw; height: 600px;">
     <div class="background">
@@ -9,13 +9,13 @@
                 <form action="#">
                     {{-- {{url('/crud')}} --}}
                     <div>
-                        <input class="check" type="radio" name="positions[]" value="area"> エリアで絞り込み
-                        {{-- <input class="check" type="radio" name="positions[]" value="keyword"> キーワード --}}
+                        <input class="check" type="radio" name="area[]" value="area"> エリアで絞り込み
                     </div>
                     <div>
                         <input class="check " type="text" name="keyword"  placeholder="キーワードを入力">
                         <input type="submit" value="検索" class="btn btn-info">
                         {{-- value="{{$keyword}}" --}}
+                        {{-- 検索機能の実装は時間があれば行う --}}
                     </div>
                 </form>
             </div>
@@ -30,12 +30,17 @@
                 @foreach ($facilities as $facility)
                 <div class="facility">
                     <div class="facility_image">
+                        @if(isset($facility->picture))
+                        <img src="./image/{{$facility->picture}}" alt="写真" class="picture">
+                        @else
                         <img src="./image/noimage.png" alt="写真" class="picture">
-                    </div>
+                        @endif
+                        </div>
                     <div class="facility_detail">
                         <div class="facility_detail_top">
                             <h2 class="detail name top">{{$facility->name}}</h2>
-                            <p class="like top">⭐️</p>
+                            {{-- <p class="like top">⭐️</p> --}}
+                            {{-- お気に入り機能の実装は時間があれば行う --}}
                         </div>
                         <div class="facility_detail_bottom">
                             <div class="facility_detail_bottom_left">

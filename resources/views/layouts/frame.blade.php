@@ -48,7 +48,7 @@
     </div>
   </header>
 
-@yield('top')
+@yield('content')
 
 <footer>
   <div class="page-footer">
