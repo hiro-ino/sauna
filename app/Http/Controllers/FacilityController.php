@@ -13,14 +13,12 @@ class FacilityController extends Controller
         return view('create_facility.create_facility');
     }
 
-
     function edit($id){
         $facility = Facility::find($id);
 
         return view('create_facility.edit_facility' , ['facility' => $facility]);
         
     }
-
     
     function store(Request $request)
     {
@@ -30,7 +28,6 @@ class FacilityController extends Controller
             $image = $request->file('image')->getClientOriginalName();
             $facility->picture = $request->file('image')->storAs('public/images' , $image);
         }
-
         $facility->name = $request ->name;
         $facility->tel = $request->tel;
         $facility->address = $request->address;
@@ -65,7 +62,6 @@ class FacilityController extends Controller
             $image = $request->file('image')->getClientOriginalName();
             $facility->picture = $request->file('image')->storAs('public/images' , $image);
         }
-
         $facility->name = $request ->name;
         $facility->tel = $request->tel;
         $facility->address = $request->address;
@@ -73,18 +69,17 @@ class FacilityController extends Controller
         $facility-> day_off = $request-> dayoff;
         $facility-> url = $request-> url;
         $facility->save();
-
-
         // ここにnew Facility_categoryをいれる？？
-
-
-
-
         return view('create_facility.create_facility' , ['create_facility' => $facility]);
     }
-
-
-
+  
+    function index()
+    {
+        $facilities = Facility::all();
+        // dd($facilities);
+        // $facilities_id = Facility::find(2)->facilityCategories;
+        return view('top',['facilities' => $facilities ]);
+    }
 }
 
 
