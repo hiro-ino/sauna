@@ -7,19 +7,17 @@
     <link rel="stylesheet" href="{{asset('css/create.css')}}">
     <title>Sauna.com</title>
 </head>
-@extends('layouts.frame')
-  <link rel="stylesheet" href="./top.css">
-  @section('content')
 <body>
    <div class="main"> 
       <div class="main-content">
          <div class="title">
-            <h1>新規施設登録</h1>
+            <h1>施設登録変更</h1>
          </div>
 
-            <form action="{{route('create_facility.store')}}" method="POST"  enctype="multipart/form-data">
-              
-             @csrf
+
+            <form action="{{route('create_facility.update', $facility->id )}}" method="POST"> 
+                @method('put')
+                @csrf
                 <div class="content">
                     <div class="content-left">
                       <ul class="content-category">
@@ -30,23 +28,33 @@
                             </span>
                             <!-- 本来の選択フォームは隠す -->
                             <input type="file" name="image" id="files">
-                         </label>
+                        </label>
 
+                         @foreach($facility->FacilityCategories as $value)
+                         @if($value->category_id == 1)
                           <li class="list">温泉    :<input type="checkbox" name="category[]" value="1"></li>
+                         @endif
+                         @if($value->category_id == 2)
                           <li class="list">水風呂  :<input type="checkbox" name="category[]" value="2"></li>
+                         @endif
+                         @if($value->category_id == 3)
                           <li class="list">外気浴  :<input type="checkbox" name="category[]" value="3"></li>
+                         @endif
+                         @if($value->category_id == 4)
                           <li class="list">飲料水  :<input type="checkbox" name="category[]" value="4"></li>
-                        </ul>
+                         @endif
+                         @endforeach
+                      </ul>
                     </div>
 
                     <div class="content-right">
                       <ul>
-                        <li class="list">施設名：<input type="text" placeholder="施設名" name="name" class="text"></li>
-                        <li class="list">電話番号：<input type="tel" placeholder="000-000-000" name="tel" class="text"></li>
-                        <li class="list">住所：<input type="text" name="address" class="text1"></li>
-                        <li class="list">営業時間： <input type="text" placeholder="10:00~23:00" name="hour" class="text"> </li>
-                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="dayoff" class="text"></li>
-                        <li class="list">HP：<input type="text" name="url" class="text"> </li>
+                        <li class="list">施設名：<input type="text" placeholder="施設名" name="name" class="text" value="{{$facility->name}}"></li>
+                        <li class="list">電話番号：<input type="tel" placeholder="000-000-000" name="tel"  class="text" value="{{$facility->tel}}"></li>
+                        <li class="list">住所：<input type="text" name="address" class="text" value="{{$facility->address}}"></li>
+                        <li class="list">営業時間： <input type="text" placeholder="10:00~23:00" name="hour" class="text"  value="{{$facility->business_hour}}"> </li>
+                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="dayoff"  class="text" value="{{$facility->day_off}}"></li>
+                        <li class="list">HP：<input type="text" name="url"  class="text" value="{{$facility->url}}"> </li>
                       </ul>
                     </div>
                 </div>
@@ -58,6 +66,6 @@
             </form>
         </div>    
     </div>
-</body>
-@endsection
+    
+  </body>
 </html>

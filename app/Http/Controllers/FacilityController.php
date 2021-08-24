@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Facility;
-use App\Facility_Category;
+use App\FacilityCategory;
 use Auth;
 
 class FacilityController extends Controller
@@ -15,7 +15,7 @@ class FacilityController extends Controller
 
     function edit($id){
         $facility = Facility::find($id);
-
+        
         return view('create_facility.edit_facility' , ['facility' => $facility]);
         
     }
@@ -26,7 +26,7 @@ class FacilityController extends Controller
         if($request->hasFile('image') && $request->file('image')->isValid())
         {
             $image = $request->file('image')->getClientOriginalName();
-            $facility->picture = $request->file('image')->storAs('public/images' , $image);
+            $facility->picture = $request->file('image')->storeAs('public/images' , $image);
         }
         $facility->name = $request ->name;
         $facility->tel = $request->tel;
@@ -38,7 +38,7 @@ class FacilityController extends Controller
         $facility->save();
 
 
-        $facility_category = new Facility_Category();
+        $facility_category = new FacilityCategory();
         // $request->category; をループする。その中で配列の数分、$facility_category->category_idに代入して毎回save
         foreach((array)$request->category as $value)
         {
@@ -60,7 +60,7 @@ class FacilityController extends Controller
         if($request->hasFile('image') && $request->file('image')->isValid())
         {
             $image = $request->file('image')->getClientOriginalName();
-            $facility->picture = $request->file('image')->storAs('public/images' , $image);
+            $facility->picture = $request->file('image')->storeAs('public/images' , $image);
         }
         $facility->name = $request ->name;
         $facility->tel = $request->tel;
