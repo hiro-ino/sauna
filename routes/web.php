@@ -20,3 +20,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/reply/like/{id}', 'FacilityController@like')->name('facility.like');
+Route::get('/reply/unlike/{id}', 'FacilityController@unlike')->name('facility.unlike');
