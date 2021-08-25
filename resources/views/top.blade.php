@@ -31,7 +31,7 @@
                 <div class="facility">
                     <div class="facility_image">
                         @if(isset($facility->picture))
-                        <img src="./image/{{$facility->picture}}" alt="写真" class="picture">
+                        <img src="{{Storage::url($facility->picture)}}" alt="写真" class="picture">
                         @else
                         <img src="./image/noimage.png" alt="写真" class="picture">
                         @endif

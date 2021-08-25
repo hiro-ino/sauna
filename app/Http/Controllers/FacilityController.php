@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 class FacilityController extends Controller{
     function index(){
         $facilities = Facility::all();
-        // dd($facilities);
-        // $facilities_id = Facility::find(2)->facilityCategories;
         return view('top',['facilities' => $facilities ]);
     }
 }
