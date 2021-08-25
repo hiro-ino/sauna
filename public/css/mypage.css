@@ -12,51 +12,60 @@ body{
 
 .mypage-title {
   padding: 0.5em 1em;
-  margin: 0 2em;
+  margin: 2em 2em 0;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;
   background-color: white;
+  color:#57723e;
 }
+
 
 .mypage-main {
   margin: 0 2em;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;
   background-color: white;
+  text-align: center;
 }
 
 .mypage-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.5em 1em;
 }
 
 .favorite-title {
   padding: 0.5em 1em;
+  margin: 0 2em;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;;
   background-color: white;
+  color:#57723e;
 }
 
 .favorite-main {
   padding: 0.5em 1em;
+  margin: 0 2em;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;;
   background-color: white;
 }
 
 .comment-title {
   padding: 0.5em 1em;
+  margin: 0 2em;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;
   background-color: white;
+  color:#57723e;
 }
 
 .comment-main {
   padding: 0.5em 1em;
+  margin: 0 2em 3.8em;
   font-weight: bold;
-  border: solid 3px #000000;
+  border: solid 3px #57723e;
   background-color: white;
 }
