@@ -43,12 +43,13 @@ class User extends Authenticatable
         return $this->hasMany(('App\Facility'));
 
     function favorites()
-    {
+        {
         return $this->hasMany('App\favorites');
-    }
+        }
 
     function comments()
-    {
+        {
         return $this->hasMany('App\comments');
+        }
     }
 }
