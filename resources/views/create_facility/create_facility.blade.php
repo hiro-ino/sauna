@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{asset('css/create.css')}}">
     <title>Sauna.com</title>
 </head>
+@extends('layouts.frame')
+  <link rel="stylesheet" href="./top.css">
+  @section('content')
 <body>
    <div class="main"> 
       <div class="main-content">
@@ -55,6 +58,6 @@
             </form>
         </div>    
     </div>
-    
 </body>
+@endsection
 </html>
