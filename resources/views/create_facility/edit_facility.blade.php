@@ -29,24 +29,9 @@
                             <!-- 本来の選択フォームは隠す -->
                             <input type="file" name="image" id="files">
                         </label>
-                         @for ($i = 0; $i < count($categories[]); $i++)
-                            @if(isset($categories[$i]->id== $i))
-                            <li class="list">{{$categories[$i]->name}}    :<input type="checkbox" name="category[]" value={{$categories[$i]->id}} checked></li>
-                            @else
-                            <li class="list">{{$categories->name}}    :<input type="checkbox" name="category[]" value={{$categories[$i]->id}} ></li>
-                            @endif
-                          @endfor
-{{--                         
-                          <li class="list">水風呂  :
-                            <input type="checkbox" name="category[]" value="2" {{$value->category_id == 2 ? 'checked':''}}>
-                          </li>
-                          <li class="list">外気浴  :
-                            <input type="checkbox" name="category[]" value="3" {{$value->category_id == 3 ? 'checked':''}}>
-                          </li>
-                          <li class="list">飲料水  :
-                            <input type="checkbox" name="category[]" value="4" {{$value->category_id == 4 ? 'checked':''}}>
-                          </li> --}}
-                        
+                        @for ($i = 0; $i < count($categories); $i++)
+                          <li class="list">{{$categories[$i]->name}}   :<input type="checkbox" name="category[]" value="{{$categories[$i]->id}}" {{ in_array($i + 1, $category_ids, true) ? 'checked' : '' }}></li>
+                        @endfor
                       </ul>
                     </div>
 

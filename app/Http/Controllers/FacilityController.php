@@ -18,8 +18,8 @@ class FacilityController extends Controller
     function edit($id){
         $facility = Facility::find($id);
         $categories = Category::all();
-        dd($category);
-        return view('create_facility.edit_facility' , ['facility' => $facility , 'categories' => $categories]);
+        $category_ids = $facility->category_ids()->toArray();
+        return view('create_facility.edit_facility' , ['facility' => $facility , 'categories' => $categories, 'category_ids' => $category_ids]);
     }
     
     function store(Request $request)
