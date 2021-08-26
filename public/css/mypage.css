@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+body{
+  background-image: url(../image/トップページ\　背景.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mypage-title {
+  padding: 0.5em 1em;
+  margin: 2em 2em 0;
+  font-weight: bold;
+  border: solid 3px #57723e;
+  background-color: white;
+  color:#57723e;
+}
+
+
+.mypage-main {
+  margin: 0 2em;
+  font-weight: bold;
+  border: solid 3px #57723e;
+  background-color: white;
+  text-align: center;
+}
+
+.mypage-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.favorite-title {
+  padding: 0.5em 1em;
+  margin: 0 2em;
+  font-weight: bold;
+  border: solid 3px #57723e;;
+  background-color: white;
+  color:#57723e;
+}
+
+.favorite-main {
+  padding: 0.5em 1em;
+  margin: 0 2em;
+  font-weight: bold;
+  border: solid 3px #57723e;;
+  background-color: white;
+}
+
+.comment-title {
+  padding: 0.5em 1em;
+  margin: 0 2em;
+  font-weight: bold;
+  border: solid 3px #57723e;
+  background-color: white;
+  color:#57723e;
+}
+
+.comment-main {
+  padding: 0.5em 1em;
+  margin: 0 2em 3.8em;
+  font-weight: bold;
+  border: solid 3px #57723e;
+  background-color: white;
+}
