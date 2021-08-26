@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'FacilityController@index');
+Route::get('/', 'FacilityController@index')->name('top')
 Route::get('/', function () {
     return view('mypage');
 });
