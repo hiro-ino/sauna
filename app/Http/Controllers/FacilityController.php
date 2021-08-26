@@ -33,9 +33,9 @@ class FacilityController extends Controller
         $facility->name = $request ->name;
         $facility->tel = $request->tel;
         $facility->address = $request->address;
-        $facility-> business_hour = $request->hour;
-        $facility-> day_off = $request-> dayoff;
-        $facility-> url = $request-> url;
+        $facility->business_hour = $request->hour;
+        $facility->day_off = $request->day_off;
+        $facility->url = $request->url;
         $facility->user_id = Auth::id();
         $facility->save();
 
