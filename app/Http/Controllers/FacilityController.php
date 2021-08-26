@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Facility;
 use App\FacilityCategory;
+use App\Category;
+
 use Auth;
 
 class FacilityController extends Controller
@@ -15,9 +17,9 @@ class FacilityController extends Controller
 
     function edit($id){
         $facility = Facility::find($id);
-        
-        return view('create_facility.edit_facility' , ['facility' => $facility]);
-        
+        $categories = Category::all();
+        dd($category);
+        return view('create_facility.edit_facility' , ['facility' => $facility , 'categories' => $categories]);
     }
     
     function store(Request $request)
@@ -38,20 +40,18 @@ class FacilityController extends Controller
         $facility->save();
 
 
-        $facility_category = new FacilityCategory();
         // $request->category; をループする。その中で配列の数分、$facility_category->category_idに代入して毎回save
-        foreach((array)$request->category as $value)
-        {
-        $facility_category->facility_id = $facility->id;
-        $facility_category->category_id = $value; 
-        $facility_category->save();
-        }
 
+        // foreach((array)$request->category as $attributes)
+        foreach((array)$request->category as $value)
+        {   
+            $facility_category = new FacilityCategory();
+            $facility_category->facility_id = $facility->id;
+            $facility_category->category_id = $value; 
+            $facility_category->save();
+        }
         return redirect() -> route('create_facility.create');
     }
-
-
-
 
     function update(Request $request , $id)
     {

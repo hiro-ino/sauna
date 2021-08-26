@@ -14,5 +14,10 @@ class Facility extends Model
     {
         return $this->hasMany('App\FacilityCategory');
     }
+
+    function categories()
+    {
+        return $this->belongsToMany('App\Category');
+    }
 }
 
