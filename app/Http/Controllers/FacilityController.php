@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Facility;
-use App\Facility_Category;
+use App\FacilityCategory;
 use Auth;
 
 class FacilityController extends Controller
-{
+{    
     function create(){
         return view('create_facility.create_facility');
     }
@@ -38,7 +38,7 @@ class FacilityController extends Controller
         $facility->save();
 
 
-        $facility_category = new Facility_Category();
+        $facility_category = new FacilityCategory();
         // $request->category; をループする。その中で配列の数分、$facility_category->category_idに代入して毎回save
         foreach((array)$request->category as $value)
         {
@@ -47,7 +47,7 @@ class FacilityController extends Controller
         $facility_category->save();
         }
 
-        return redirect() -> route('create_facility.create');
+        return redirect() -> route('top');
     }
 
 
