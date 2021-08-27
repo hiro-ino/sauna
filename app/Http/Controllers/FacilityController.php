@@ -18,8 +18,8 @@ class FacilityController extends Controller
     function edit($id){
         $facility = Facility::find($id);
         $categories = Category::all();
-        dd($category);
-        return view('create_facility.edit_facility' , ['facility' => $facility , 'categories' => $categories]);
+        $category_ids = $facility->category_ids()->toArray();
+        return view('create_facility.edit_facility' , ['facility' => $facility , 'categories' => $categories, 'category_ids' => $category_ids]);
     }
     
     function store(Request $request)
@@ -39,11 +39,8 @@ class FacilityController extends Controller
         $facility->user_id = Auth::id();
         $facility->save();
 
-
         $facility_category = new FacilityCategory();
         // $request->category; をループする。その中で配列の数分、$facility_category->category_idに代入して毎回save
-
-        // foreach((array)$request->category as $attributes)
         foreach((array)$request->category as $value)
         {   
             $facility_category = new FacilityCategory();
@@ -51,7 +48,6 @@ class FacilityController extends Controller
             $facility_category->category_id = $value; 
             $facility_category->save();
         }
-
         return redirect() -> route('top');
     }
 
@@ -72,7 +68,7 @@ class FacilityController extends Controller
         $facility-> url = $request-> url;
         $facility->save();
         // ここにnew Facility_categoryをいれる？？
-        return view('create_facility.create_facility' , ['create_facility' => $facility]);
+        return redirect() -> route('top');
     }
   
     function index()

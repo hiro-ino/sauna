@@ -15,9 +15,10 @@ class Facility extends Model
         return $this->hasMany('App\FacilityCategory');
     }
 
-    function categories()
+    function category_ids()
     {
-        return $this->belongsToMany('App\Category');
+        return $this->hasMany('App\FacilityCategory')
+                    ->pluck('category_id');
     }
 }
 
