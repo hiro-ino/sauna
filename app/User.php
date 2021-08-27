@@ -40,7 +40,7 @@ class User extends Authenticatable
     function facilities()
     {
         return $this->hasMany('App\Facility');
-
+    }
     function favorites()
     {
         return $this->hasMany('App\favorites');
