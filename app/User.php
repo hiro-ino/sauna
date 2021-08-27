@@ -39,9 +39,9 @@ class User extends Authenticatable
 
 
     function facilities()
-    {
-        return $this->hasMany(('App\Facility'));
-
+        {
+        return $this->hasMany('App\Facility');
+        }
     function favorites()
         {
         return $this->hasMany('App\favorites');
@@ -51,5 +51,4 @@ class User extends Authenticatable
         {
         return $this->hasMany('App\comments');
         }
-    }
 }
