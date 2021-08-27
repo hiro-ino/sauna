@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration:none; 
+}
+
 .page-header {
   background-color:#b5ecd5;
   color: #57723e;
@@ -12,6 +16,12 @@
   align-items: center;
   padding: 15px 20px;
   margin-bottom: 1rem;
+}
+
+.create_btn {
+  color: black;
+  padding: 3px 65px;
+  font-family: sans-serif;
 }
 
 .menu-btn {
@@ -103,7 +113,7 @@
   left: 0;
 }
 
-.search_container input[type="text"]{
+.search_container input[type="text"] {
   border: 1px solid #999;
   padding: 3px 10px;
   border-radius: 3px;
@@ -114,7 +124,7 @@
   outline: 0;
   height: 2.0em;
 }
-.search_container input[type="submit"]{
+.search_container input[type="submit"] {
   cursor: pointer;
   font-family: FontAwesome;
   font-size: 1.2em;
@@ -130,8 +140,7 @@
   vertical-align: middle;
 }
 
-
-.page-footer{
+.page-footer {
   background-color:#b5ecd5;
   color: #57723e;
   display: flex;
