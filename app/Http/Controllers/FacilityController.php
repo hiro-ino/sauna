@@ -10,7 +10,7 @@ use App\Category;
 use Auth;
 
 class FacilityController extends Controller
-{
+{    
     function create(){
         return view('create_facility.create_facility');
     }
@@ -38,6 +38,8 @@ class FacilityController extends Controller
         $facility->url = $request->url;
         $facility->user_id = Auth::id();
         $facility->save();
+
+        $facility_category = new FacilityCategory();
         // $request->category; をループする。その中で配列の数分、$facility_category->category_idに代入して毎回save
         foreach((array)$request->category as $value)
         {   
@@ -46,7 +48,7 @@ class FacilityController extends Controller
             $facility_category->category_id = $value; 
             $facility_category->save();
         }
-        return redirect() -> route(('top'));
+        return redirect() -> route('top');
     }
 
     function update(Request $request , $id)

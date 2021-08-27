@@ -9,15 +9,17 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-   <header>
+  <header>
     <div class="page-header">
      <nav class="title">
        <h1 href="index.php" class="navbar-left">Sauna.com</h1>
        <h5 class="title">サウナドットコム</h5>
      </nav>
+     <div class="create_btn">
+      <a href="{{route('create_facility.create')}}">新規登録</a>
+     </div>
     </div>
-
-     <div class="hamburger-menu">
+    <div class="hamburger-menu">
        <input type="checkbox" id="menu-btn-check">
        <label for="menu-btn-check" class="menu-btn"><span></span></label>
        <div class="menu-content">
@@ -39,7 +41,7 @@
               </li>
               <li>
                 <form method="get" action="#" class="search_container">
-                  <input type="text" size="25" placeholder="　キーワード検索">
+                  <input type="text" size="25" placeholder="キーワード検索">
                   <input type="submit" value="検索">
                 </form>
               </li>
