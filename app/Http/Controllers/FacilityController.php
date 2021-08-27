@@ -68,7 +68,7 @@ class FacilityController extends Controller
         $facility-> url = $request-> url;
         $facility->save();
         // ここにnew Facility_categoryをいれる？？
-        return view('create_facility.create_facility' , ['create_facility' => $facility]);
+        return redirect() -> route('top');
     }
   
     function index()

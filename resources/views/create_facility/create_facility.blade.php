@@ -45,7 +45,7 @@
                         <li class="list">電話番号：<input type="tel" placeholder="000-000-000" name="tel" class="text"></li>
                         <li class="list">住所：<input type="text" name="address" class="text1"></li>
                         <li class="list">営業時間： <input type="text" placeholder="10:00~23:00" name="hour" class="text"> </li>
-                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="dayoff" class="text"></li>
+                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="day_off" class="text"></li>
                         <li class="list">HP：<input type="text" name="url" class="text"> </li>
                       </ul>
                     </div>

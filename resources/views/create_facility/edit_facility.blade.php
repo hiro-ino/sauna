@@ -41,7 +41,7 @@
                         <li class="list">電話番号：<input type="tel" placeholder="000-000-000" name="tel"  class="text" value="{{$facility->tel}}"></li>
                         <li class="list">住所：<input type="text" name="address" class="text" value="{{$facility->address}}"></li>
                         <li class="list">営業時間： <input type="text" placeholder="10:00~23:00" name="hour" class="text"  value="{{$facility->business_hour}}"> </li>
-                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="dayoff"  class="text" value="{{$facility->day_off}}"></li>
+                        <li class="list">定休日：<input type="text" placeholder="月曜日" name="day_off"  class="text" value="{{$facility->day_off}}"></li>
                         <li class="list">HP：<input type="text" name="url"  class="text" value="{{$facility->url}}"> </li>
                       </ul>
                     </div>

@@ -25,20 +25,20 @@
        <div class="menu-content">
            <ul>
                <li>
-                  <a href="#">マイページ</a>
+               <a href="{{route('mypage')}}">マイページ</a>
                </li>
                 <li>
-                  <a href="#">施設一覧</a>
+                  <a href="{{route('top')}}">施設一覧</a>
               </li>
               <li>
-                  <a href="#">新規ユーザー登録</a>
+                  <a href="/login">新規ユーザー登録</a>
               </li>
               <li>
-                  <a href="#">ログイン</a>
+                  <a href="/login">ログイン</a>
               </li>
-              <li>
+              {{-- <li>
                   <a href="#">施設詳細</a>
-              </li>
+              </li> --}}
               <li>
                 <form method="get" action="#" class="search_container">
                   <input type="text" size="25" placeholder="キーワード検索">
